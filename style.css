@@ -9,8 +9,8 @@
 
 :root {
   /* Couleurs */
-  --couleur-entete: #0f3d3e;        /* fond de l'en-tête */
-  --couleur-pied: #0b2c2d;          /* fond du pied de page */
+  --couleur-entete: #f2e7df;        /* fond de l'en-tête */
+  --couleur-pied: #f2e7df;          /* fond du pied de page */
   --couleur-texte: #fbf6e4;         /* texte clair sur fond sombre */
   --couleur-accent: #e9d58b;        /* accent "vanille" : survols, liens */
   --couleur-bouton: rgba(255, 255, 255, 0.08);
