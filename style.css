@@ -283,7 +283,7 @@ svg {
 }
 
 .pied__haut {
-  display: flex;
+  display: wrap;
  justify-content: center;
   align-items: start;
   gap: 2rem;
