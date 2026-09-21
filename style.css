@@ -288,7 +288,7 @@ svg {
  justify-content: center;
   align-items: start;
   gap: 2rem;
-  max-width: var(--largeur-max);
+  max-width: 25%;
   margin: 0 auto;
   padding: 3rem 1.25rem 2rem;
 }
