@@ -143,7 +143,7 @@ svg {
   height: calc(var(--hauteur-entete) - 16px);
   object-fit: contain;
   transition: transform 0.2s ease;
-   mix-blend-mode: multiply;
+
 }
 
 .logo:hover img {
