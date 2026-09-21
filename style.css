@@ -283,8 +283,8 @@ svg {
 }
 
 .pied__haut {
-  display: grid;
-  grid-template-columns: auto repeat(4, 1fr);
+  display: flex;
+ justify-content: center;
   align-items: start;
   gap: 2rem;
   max-width: var(--largeur-max);
