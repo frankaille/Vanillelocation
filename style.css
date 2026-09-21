@@ -347,6 +347,7 @@ svg {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+   align-items: center;
   gap: 0.5rem 2rem;
   padding: 1.25rem;
   border-top: 1px solid rgba(255, 255, 255, 0.12);
