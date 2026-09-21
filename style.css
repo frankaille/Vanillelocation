@@ -13,7 +13,7 @@
   --couleur-pied: #f2e7df;          /* fond du pied de page */
   --couleur-texte: #fbf6e4;         /* texte clair sur fond sombre */
   --couleur-accent: #e9d58b;        /* accent "vanille" : survols, liens */
-  --couleur-bouton: rgba(255, 255, 255, 0.08);
+  --couleur-bouton: #6EC1E4;
 
   /* Tailles */
   --hauteur-entete: 76px;
