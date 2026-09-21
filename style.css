@@ -17,7 +17,7 @@
 
   /* Tailles */
   --hauteur-entete: 20%;
-  --largeur-max: 1200px;
+  --largeur-max: 100%;
   --rayon: 10px;
 
   /* Police : celles du système, rien à télécharger */
@@ -130,7 +130,7 @@ svg {
 .entete__contenu {
   position: relative;
   display: flex;
-  align-items: center;
+  align-items: space-between;
   gap: 1.5rem;
   max-width: var(--largeur-max);
   min-height: var(--hauteur-entete);
