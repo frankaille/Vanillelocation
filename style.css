@@ -261,7 +261,7 @@ svg {
   height: 140%;
   /* Si l'image n'existe pas encore, le dégradé s'affiche à la place */
   background-image:
-    url("../images/hero.jpg"),
+    url("hero.jpg"),
     linear-gradient(160deg, #1a6a6c 0%, var(--couleur-entete) 60%, #b9a75f 140%);
   background-size: cover;
   background-position: center;
