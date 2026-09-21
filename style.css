@@ -17,7 +17,7 @@
 
   /* Tailles */
   --hauteur-entete: 20%;
-  --largeur-max: 100%;
+  --largeur-max: 90%;
   --rayon: 10px;
 
   /* Police : celles du système, rien à télécharger */
@@ -120,7 +120,7 @@ svg {
 /* ---------- En-tête ---------- */
 
 .entete {
-  position: sticky;
+  position: static;
   top: 0;
   z-index: 50;
   background: var(--couleur-entete);
@@ -128,9 +128,12 @@ svg {
 }
 
 .entete__contenu {
-  position: relative;
+  position: static;
   display: flex;
-  align-items: space-between;
+   flex-direction : row;
+   justify-content: center;
+   
+  align-items: center;
   gap: 1.5rem;
   max-width: var(--largeur-max);
   min-height: var(--hauteur-entete);
