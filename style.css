@@ -289,14 +289,13 @@ svg {
  justify-content: center;
   align-items: start;
   gap: 2rem;
-  max-width: 25%;
-  margin: 0 auto;
+    margin: 0 auto;
   padding: 3rem 1.25rem 2rem;
 }
 
 .logo--pied img {
-  width: 110px;
-  height: 110px;
+  width: 1024px;
+  height: 1024px;
 }
 
 .pied__titre {
