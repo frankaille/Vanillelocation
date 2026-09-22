@@ -14,13 +14,18 @@
   <meta property="og:site_name" content="Vanillelocation - Pour ceux qui veulent juste rouler!">
   <meta property="og:title" content="Louer une voiture à Combani, Mayotte - Vanillelocation">
   <meta property="og:url" content="https://vanillelocation.com/">
-  <meta property="og:image" content="https://vanillelocation.com/images/test logo.png">
+  <meta property="og:image" content="https://vanillelocation.com/logo.webp">
   <meta name="twitter:card" content="summary_large_image">
 
-  <link rel="icon" href="images/test logo.png" type="image/png">
+  <link rel="icon" href="logo.webp" type="image/webp">
+
+  <!-- Police des titres (condensée et grasse, comme sur l'ancien site) -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css">
 
-  <!-- Données structurées pour Google (reprises de l'ancien site, complétées avec l'adresse) -->
+  <!-- Données structurées pour Google -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -29,7 +34,7 @@
     "name": "Vanillelocation",
     "description": "Pour ceux qui veulent juste rouler!",
     "url": "https://vanillelocation.com/",
-    "logo": "https://vanillelocation.com/images/test logo.png",
+    "logo": "https://vanillelocation.com/logo.webp",
     "telephone": "+33659421873",
     "address": {
       "@type": "PostalAddress",
@@ -45,33 +50,33 @@
 <body>
   <a class="lien-evitement" href="#contenu">Aller au contenu</a>
 
-  <!-- Bibliothèque d'icônes : définies une seule fois, réutilisées avec <use> -->
+  <!-- Icônes, définies une seule fois puis réutilisées avec <use> -->
   <svg class="sprite" aria-hidden="true" focusable="false">
-    <symbol id="icone-whatsapp" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></symbol>
-    <symbol id="icone-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></symbol>
-    <symbol id="icone-telephone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
-    <symbol id="icone-carte" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+    <symbol id="icone-whatsapp" viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></symbol>
+    <symbol id="icone-mail" viewBox="0 0 512 512"><path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4 0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"/></symbol>
+    <symbol id="icone-telephone" viewBox="0 0 512 512"><path d="M517.5 273.1c-18.6-14-50.6-38-71.3-53.5l-40.8-30.5c-22.2-16.6-53.6-12.1-70.3 10.1l-24.4 32.5c-1.2 1.6-3.4 2.2-5.3 1.4-11.7-4.9-38.4-16.6-65.8-38.3-27.4-21.8-53-49.7-65.4-64.9-1.3-1.6-1.3-3.9 0-5.5l25.3-31.3c17.5-21.6 14.2-53-7.3-70.5l-38.1-31c-17.9-14.6-43.8-13.8-60.7 1.9L64.3 22.3c-31.9 29.6-49.9 76-42.1 121.9 12.1 71.5 62.6 165 152.1 237.2 89.5 72.2 191.8 100.4 262.8 92.2 45.9-5.3 87.8-30 111.6-65.4l19.5-28.8c14.9-22.1 8.4-52.5-14.7-70.3z"/></symbol>
+    <symbol id="icone-carte" viewBox="0 0 512 512"><path d="M256 0c-97.2 0-176 78.8-176 176 0 96.5 145.7 296.4 165 322.1 5.7 7.6 16.3 7.6 22 0 19.3-25.7 165-225.6 165-322.1C432 78.8 353.2 0 256 0zm0 272c-53 0-96-43-96-96s43-96 96-96 96 43 96 96-43 96-96 96z"/></symbol>
   </svg>
 
   <!-- ============ EN-TÊTE ============ -->
   <header class="entete">
     <div class="entete__contenu">
       <a class="logo" href="./" aria-label="Vanillelocation, retour à l'accueil">
-        <img src="images/test logo.png" alt="Vanillelocation" width="1024" height="1024">
+        <img src="logo.webp" alt="Vanillelocation" width="600" height="600">
       </a>
 
       <nav class="menu" id="menu" aria-label="Menu principal">
-        <ul>
+        <ul class="menu__liens">
           <li><a href="./" aria-current="page">Accueil</a></li>
         </ul>
-      </nav>
 
-      <ul class="reseaux">
-        <li><a href="https://api.whatsapp.com/send?phone=33659421873" target="_blank" rel="noopener" aria-label="WhatsApp"><svg aria-hidden="true"><use href="#icone-whatsapp"/></svg></a></li>
-        <li><a href="mailto:franckhocquard@hotmail.fr?subject=demande%20de%20disponibilit%C3%A9%20et%20tarif%20pour%20une%20location%20de%20XX%2FXX%2F202X%20au%20XX%2FXX%2F202X&amp;body=Bonjour%2C%0A%0AJe%20souhaite%20savoir%20si%20vous%20avez%20de%20la%20disponibilit%C3%A9%20pour%20un%20vehicule%20du%20XX%2FXX%2F202X%20au%20XX%2FXX%2F202X%20et%20quels%20sont%20les%20tarifs%3F%0A%0ACordialement%0AM%2FMme%20Pr%C3%A9nom%20NOM%20%0At%C3%A9l%C3%A9phone" aria-label="Envoyer un e-mail"><svg aria-hidden="true"><use href="#icone-mail"/></svg></a></li>
-        <li><a href="tel:0659421873" aria-label="Appeler le 06 59 42 18 73"><svg aria-hidden="true"><use href="#icone-telephone"/></svg></a></li>
-        <li><a href="https://maps.app.goo.gl/W7Ekw9DHVgbHR7QS7" target="_blank" rel="noopener" aria-label="Voir sur la carte"><svg aria-hidden="true"><use href="#icone-carte"/></svg></a></li>
-      </ul>
+        <ul class="reseaux">
+          <li><a class="reseaux__whatsapp" href="https://api.whatsapp.com/send?phone=33659421873" target="_blank" rel="noopener" aria-label="WhatsApp"><svg aria-hidden="true"><use href="#icone-whatsapp"/></svg></a></li>
+          <li><a class="reseaux__mail" href="mailto:franckhocquard@hotmail.fr?subject=demande%20de%20disponibilit%C3%A9%20et%20tarif%20pour%20une%20location%20de%20XX%2FXX%2F202X%20au%20XX%2FXX%2F202X&amp;body=Bonjour%2C%0A%0AJe%20souhaite%20savoir%20si%20vous%20avez%20de%20la%20disponibilit%C3%A9%20pour%20un%20vehicule%20du%20XX%2FXX%2F202X%20au%20XX%2FXX%2F202X%20et%20quels%20sont%20les%20tarifs%3F%0A%0ACordialement%0AM%2FMme%20Pr%C3%A9nom%20NOM%20%0At%C3%A9l%C3%A9phone" aria-label="Envoyer un e-mail"><svg aria-hidden="true"><use href="#icone-mail"/></svg></a></li>
+          <li><a class="reseaux__tel" href="tel:0659421873" aria-label="Appeler le 06 59 42 18 73"><svg aria-hidden="true"><use href="#icone-telephone"/></svg></a></li>
+          <li><a class="reseaux__carte" href="https://maps.app.goo.gl/W7Ekw9DHVgbHR7QS7" target="_blank" rel="noopener" aria-label="Voir sur la carte"><svg aria-hidden="true"><use href="#icone-carte"/></svg></a></li>
+        </ul>
+      </nav>
 
       <!-- Bouton du menu, visible uniquement sur mobile -->
       <button class="burger" type="button" aria-controls="menu" aria-expanded="false" aria-label="Ouvrir le menu">
@@ -85,9 +90,8 @@
   <!-- ============ CONTENU ============ -->
   <main id="contenu">
     <section class="hero" aria-labelledby="titre-page">
-       
+      <!-- Couche d'image : c'est elle qui bouge légèrement au défilement (effet parallaxe) -->
       <div class="hero__fond" data-parallaxe></div>
-      <div class="hero__voile"></div>
       <h1 id="titre-page" class="sr-only">Louer une voiture à Combani, Mayotte</h1>
     </section>
   </main>
@@ -96,7 +100,7 @@
   <footer class="pied">
     <div class="pied__haut">
       <a class="logo logo--pied" href="./" aria-label="Vanillelocation, retour à l'accueil">
-        <img src="images/test logo.png" alt="Vanillelocation" width="1024" height="1024" loading="lazy">
+        <img src="logo.webp" alt="Vanillelocation" width="600" height="600" loading="lazy">
       </a>
 
       <div class="pied__bloc">
@@ -131,17 +135,17 @@
           </ul>
         </nav>
         <ul class="reseaux">
-          <li><a href="https://api.whatsapp.com/send?phone=33659421873" target="_blank" rel="noopener" aria-label="WhatsApp"><svg aria-hidden="true"><use href="#icone-whatsapp"/></svg></a></li>
-          <li><a href="mailto:franckhocquard@hotmail.fr" aria-label="Envoyer un e-mail"><svg aria-hidden="true"><use href="#icone-mail"/></svg></a></li>
-          <li><a href="tel:0659421873" aria-label="Appeler le 06 59 42 18 73"><svg aria-hidden="true"><use href="#icone-telephone"/></svg></a></li>
-          <li><a href="https://maps.app.goo.gl/W7Ekw9DHVgbHR7QS7" target="_blank" rel="noopener" aria-label="Voir sur la carte"><svg aria-hidden="true"><use href="#icone-carte"/></svg></a></li>
+          <li><a class="reseaux__whatsapp" href="https://api.whatsapp.com/send?phone=33659421873" target="_blank" rel="noopener" aria-label="WhatsApp"><svg aria-hidden="true"><use href="#icone-whatsapp"/></svg></a></li>
+          <li><a class="reseaux__mail" href="mailto:franckhocquard@hotmail.fr" aria-label="Envoyer un e-mail"><svg aria-hidden="true"><use href="#icone-mail"/></svg></a></li>
+          <li><a class="reseaux__tel" href="tel:0659421873" aria-label="Appeler le 06 59 42 18 73"><svg aria-hidden="true"><use href="#icone-telephone"/></svg></a></li>
+          <li><a class="reseaux__carte" href="https://maps.app.goo.gl/W7Ekw9DHVgbHR7QS7" target="_blank" rel="noopener" aria-label="Voir sur la carte"><svg aria-hidden="true"><use href="#icone-carte"/></svg></a></li>
         </ul>
       </div>
     </div>
 
     <div class="pied__bas">
       <a href="https://annuaire-entreprises.data.gouv.fr/entreprise/vanillelocation-940925126" target="_blank" rel="noopener">© Vanillelocation 2025</a>
-      <p>SAS au capital de 1000 euros</p><br>
+      <p>SAS au capital de 1000 euros</p>
       <p>SIRET N°940 925 126</p>
       <p>R.C.S. Mamoudzou</p>
     </div>

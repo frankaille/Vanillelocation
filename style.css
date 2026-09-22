@@ -1,27 +1,30 @@
 /* ==========================================================
    Vanillelocation - feuille de style
    ----------------------------------------------------------
-   Les couleurs et tailles importantes sont regroupées dans
-   les variables ci-dessous : modifiez-les ici et tout le site
-   suit. Les valeurs de couleur sont des valeurs PAR DÉFAUT à
-   remplacer par celles de votre charte graphique.
+   Toutes les couleurs et tailles importantes sont regroupées
+   ci-dessous. Pour changer une couleur du site, il suffit de
+   la modifier ici : elle se met à jour partout.
    ========================================================== */
 
 :root {
   /* Couleurs */
-  --couleur-entete: #f2e7df;        /* fond de l'en-tête */
-  --couleur-pied: #f2e7df;          /* fond du pied de page */
-  --couleur-texte: #fbf6e4;         /* texte clair sur fond sombre */
-  --couleur-accent: #54595F;        /* accent "vanille" : survols, liens */
-  --couleur-bouton: #6EC1E4;
+  --beige: #f2e7df;         /* fond général (en-tête, pied de page) */
+  --blanc-casse: #f8f3ef;   /* fond du bouton "Accueil" */
+  --texte: #22201d;         /* texte sombre sur fond clair */
+  --bleu: #6ec1e4;          /* boutons du pied de page + icône téléphone */
+  --vert: #25d366;          /* icône WhatsApp */
+  --rouge: #ea4335;         /* icône e-mail */
+  --orange: #ffae48;        /* icône carte */
 
   /* Tailles */
-  --hauteur-entete: 20%;
-  --largeur-max: 90%;
-  --rayon: 10px;
+  --hauteur-entete: 88px;
+  --largeur-max: 1280px;
+  --rayon: 14px;
 
-  /* Police : celles du système, rien à télécharger */
+  /* Polices : Anton pour les titres (condensée et grasse, comme
+     sur l'ancien site), police du système pour le reste */
   --police: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --police-titre: "Anton", var(--police);
 }
 
 /* ---------- Base ---------- */
@@ -40,8 +43,8 @@ body {
   margin: 0;
   font-family: var(--police);
   line-height: 1.5;
-  color: var(--couleur-texte);
-  background: var(--couleur-pied);
+  color: var(--texte);
+  background: var(--beige);
 }
 
 img {
@@ -62,7 +65,7 @@ a {
 
 /* Focus visible au clavier (accessibilité) */
 :focus-visible {
-  outline: 3px solid var(--couleur-accent);
+  outline: 3px solid var(--bleu);
   outline-offset: 3px;
 }
 
@@ -79,7 +82,7 @@ a {
   border: 0;
 }
 
-/* Le sprite d'icônes ne doit rien afficher */
+/* Le sprite d'icônes ne doit rien afficher à l'écran */
 .sprite {
   position: absolute;
   width: 0;
@@ -94,8 +97,8 @@ a {
   top: -4rem;
   z-index: 100;
   padding: 0.6rem 1rem;
-  background: var(--couleur-accent);
-  color: var(--couleur-pied);
+  background: var(--bleu);
+  color: #fff;
   border-radius: var(--rayon);
   text-decoration: none;
   font-weight: 600;
@@ -105,104 +108,100 @@ a {
   top: 1rem;
 }
 
-/* ---------- Icônes (toutes dessinées au trait) ---------- */
-
 svg {
-  width: 1.5rem;
-  height: 1.5rem;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 1.8;
-  stroke-linecap: round;
-  stroke-linejoin: round;
+  width: 1.4rem;
+  height: 1.4rem;
+  fill: currentColor;
+}
+
+/* ---------- Effet "dézoom" au survol ----------
+   Un seul endroit à modifier pour ajuster l'effet sur
+   tous les boutons et icônes du site. */
+
+.menu__liens a,
+.reseaux a,
+.bouton {
+  transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+}
+
+.menu__liens a:hover,
+.menu__liens a:focus-visible,
+.reseaux a:hover,
+.reseaux a:focus-visible,
+.bouton:hover,
+.bouton:focus-visible {
+  transform: scale(0.92);
 }
 
 /* ---------- En-tête ---------- */
 
 .entete {
-  position: static;
+  position: sticky;
   top: 0;
   z-index: 50;
-  background: var(--couleur-entete);
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+  background: var(--beige);
 }
 
 .entete__contenu {
-  position: static;
   display: flex;
-   flex-direction : row;
-   justify-content:space-between;
-   
   align-items: center;
   gap: 1.5rem;
   max-width: var(--largeur-max);
   min-height: var(--hauteur-entete);
   margin: 0 auto;
-  padding: 0.5rem 1.25rem;
+  padding: 0.75rem 1.25rem;
 }
 
 .logo img {
-  width: calc(var(--hauteur-entete) - 16px);
-  height: calc(var(--hauteur-entete) - 16px);
+  width: calc(var(--hauteur-entete) - 24px);
+  height: calc(var(--hauteur-entete) - 24px);
   object-fit: contain;
-  transition: transform 0.2s ease;
-
 }
 
-.logo:hover img {
-  transform: scale(0.9);
-}
-
-/* Menu principal */
+/* Menu principal : "Accueil" sous forme de petit encadré discret */
 
 .menu {
-  margin-right: auto; /* pousse les réseaux tout à droite */
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-right: auto; /* pousse le bloc (liens + icônes) tout à droite */
 }
 
-.menu ul {
+.menu__liens {
   display: flex;
   gap: 0.5rem;
 }
 
-.menu a {
+.menu__liens a {
   display: block;
-  padding: 0.5rem 1rem;
-  border-radius: var(--rayon);
-  color: var(--couleur-texte);
+  padding: 0.7rem 1.1rem;
+  border-radius: 6px;
+  background: var(--blanc-casse);
+  color: var(--texte);
   text-decoration: none;
-  font-weight: 600;
-  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-.menu a:hover,
-.menu a[aria-current="page"] {
-  background: var(--couleur-accent);
-  color: var(--couleur-pied);
-}
-
-/* Icônes de contact (en-tête et pied de page) */
+/* Icônes de contact (en-tête et pied de page) : carrés arrondis colorés */
 
 .reseaux {
   display: flex;
+  flex-wrap: wrap;
   gap: 0.75rem;
 }
 
 .reseaux a {
   display: grid;
   place-items: center;
-  width: 2.75rem;
-  height: 2.75rem;
-  border-radius: 50%;
-  background: var(--couleur-bouton);
-  color: var(--couleur-texte);
-  transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+  width: 3.25rem;
+  height: 3.25rem;
+  border-radius: var(--rayon);
+  color: #fff;
 }
 
-.reseaux a:hover {
-  transform: scale(0.9);
-  background: var(--couleur-accent);
-  color: var(--couleur-pied);
-}
+.reseaux__whatsapp { background: var(--vert); }
+.reseaux__mail     { background: var(--rouge); }
+.reseaux__tel      { background: var(--bleu); }
+.reseaux__carte    { background: var(--orange); }
 
 /* Bouton burger : caché sur ordinateur */
 
@@ -211,12 +210,12 @@ svg {
   flex-direction: column;
   justify-content: center;
   gap: 5px;
-  width: 2.75rem;
-  height: 2.75rem;
+  width: 3.25rem;
+  height: 3.25rem;
   padding: 0 0.7rem;
   border: 0;
   border-radius: var(--rayon);
-  background: var(--couleur-bouton);
+  background: var(--blanc-casse);
   cursor: pointer;
 }
 
@@ -224,7 +223,7 @@ svg {
   display: block;
   height: 2px;
   border-radius: 2px;
-  background: var(--couleur-texte);
+  background: var(--texte);
   transition: transform 0.25s ease, opacity 0.25s ease;
 }
 
@@ -246,63 +245,62 @@ svg {
 .hero {
   position: relative;
   overflow: hidden;
-  /* Toute la hauteur de l'écran moins l'en-tête */
-  min-height: calc(100vh - var(--hauteur-entete));
-  min-height: calc(100svh - var(--hauteur-entete));
-  background: var(--couleur-entete);
+  min-height: 60vh;
 }
 
-/* Couche d'image, plus haute que la section (140 %) pour avoir de la marge de déplacement */
+/* Couche d'image, plus haute que la section (130 %) pour avoir de la marge
+   de déplacement : c'est ce qui permet l'effet de parallaxe au défilement. */
 .hero__fond {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 140%;
-  /* Si l'image n'existe pas encore, le dégradé s'affiche à la place */
-  background-image:
-    url("hero.jpg"),
-    linear-gradient(160deg, #1a6a6c 0%, var(--couleur-entete) 60%, #b9a75f 140%);
+  height: 130%;
+  background-image: url("hero.jpg");
   background-size: cover;
   background-position: center;
   transform: translateY(var(--translateY, 0px));
   will-change: transform;
 }
 
-/* Voile sombre léger pour garder le contenu lisible sur la photo */
-.hero__voile {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.15);
-}
-
 /* ---------- Pied de page ---------- */
 
 .pied {
-  background: var(--couleur-pied);
-   min-height: var(--hauteur-entete);
+  background: var(--beige);
 }
 
 .pied__haut {
   display: flex;
-
- justify-content: center;
+  flex-wrap: wrap;
+  justify-content: center;
   align-items: start;
-  gap: 2rem;
-    margin: 0 auto;
+  gap: 2.5rem;
+  max-width: var(--largeur-max);
+  margin: 0 auto;
   padding: 3rem 1.25rem 2rem;
+  text-align: center;
+}
+
+.pied__bloc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 200px;
 }
 
 .logo--pied img {
-  width: 1024px;
-  height: 1024px;
+  width: 130px;
+  height: 130px;
 }
 
 .pied__titre {
   margin: 0 0 1rem;
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: var(--couleur-accent);
+  font-family: var(--police-titre);
+  font-size: 1.3rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--texte);
 }
 
 /* Boutons du pied de page : icône au-dessus du texte */
@@ -311,21 +309,17 @@ svg {
   display: inline-flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.5rem;
+  justify-content: center;
+  gap: 0.6rem;
+  width: 100%;
+  min-height: 110px;
   padding: 1rem 1.25rem;
   border-radius: var(--rayon);
-  background: var(--couleur-bouton);
-  color: var(--couleur-texte);
-   
+  background: var(--bleu);
+  color: #fff;
   text-align: center;
   text-decoration: none;
-  transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
-}
-
-.bouton:hover {
-  transform: scale(0.9);
-  background: var(--couleur-accent);
-  color: var(--couleur-pied);
+  font-weight: 600;
 }
 
 .pied__liens {
@@ -339,8 +333,11 @@ svg {
 }
 
 .pied__liens a:hover {
-  color: var(--couleur-accent);
   text-decoration: underline;
+}
+
+.pied__bloc .reseaux {
+  justify-content: center;
 }
 
 /* Mentions légales */
@@ -349,10 +346,9 @@ svg {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-   align-items: center;
   gap: 0.5rem 2rem;
   padding: 1.25rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
   font-size: 0.9rem;
 }
 
@@ -365,98 +361,55 @@ svg {
 }
 
 .pied__bas a:hover {
-  color: var(--couleur-accent);
   text-decoration: underline;
 }
 
 /* ==========================================================
-   Adaptation aux écrans plus petits
+   Mobile : le menu passe derrière le bouton burger
    ========================================================== */
 
-/* Tablette */
-@media (max-width: 1024px) {
-  .pied__haut {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .logo--pied {
-    grid-column: 1 / -1;
-    justify-self: center;
-  }
-}
-
-/* Mobile : le menu passe derrière le bouton burger */
 @media (max-width: 767px) {
   :root {
-    --hauteur-entete: 68px;
-  }
-
-  .entete__contenu {
-    gap: 0.75rem;
-  }
-
-  .reseaux {
-    margin-left: auto; /* les icônes se placent à droite du logo */
-    gap: 0.5rem;
-  }
-
-  .reseaux a {
-    width: 2.5rem;
-    height: 2.5rem;
+    --hauteur-entete: 72px;
   }
 
   .burger {
     display: flex;
   }
 
-  /* Menu déroulant, caché tant que le burger n'est pas activé */
+  /* Menu déroulant, caché tant que le burger n'est pas activé.
+     Il empile le lien "Accueil" puis les icônes de contact. */
   .menu {
-    position: static;
+    position: absolute;
     top: 100%;
     left: 0;
     right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
     margin: 0;
-    padding: 0.5rem 1.25rem 1rem;
-    background: var(--couleur-entete);
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.25);
+    padding: 1rem 1.25rem 1.25rem;
+    background: var(--beige);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
     display: none;
   }
 
   .menu.est-ouvert {
-    display: block;
-  }
-
-  .menu ul {
-    flex-direction: column;
-  }
-
-  .pied__haut {
-    grid-template-columns: 1fr;
-    justify-items: center;
-    text-align: center;
-  }
-
-  .pied__bloc {
     display: flex;
-    flex-direction: column;
-    align-items: center;
   }
 
-  .pied__bloc .reseaux {
-    margin-left: 0;
-    justify-content: center;
+  .menu__liens {
+    flex-direction: column;
   }
 }
 
-/* Respect des personnes qui réduisent les animations dans leur système */
+/* Respecte les personnes qui réduisent les animations dans leur système */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
   }
 
-  *,
-  *::before,
-  *::after {
+  * {
     transition: none !important;
   }
 }

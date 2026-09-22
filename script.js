@@ -2,7 +2,7 @@
    Vanillelocation - JavaScript
    Deux petites fonctions :
    1. le menu burger sur mobile
-   2. l'effet de parallaxe sur l'image d'accueil
+   2. l'effet de parallaxe sur la photo d'accueil
    ========================================================== */
 
 /* ---------- 1. Menu burger ---------- */
@@ -39,7 +39,7 @@ document.addEventListener("keydown", (evenement) => {
   }
 });
 
-/* ---------- 2. Parallaxe de l'image d'accueil ---------- */
+/* ---------- 2. Parallaxe de la photo d'accueil ---------- */
 
 const fond = document.querySelector("[data-parallaxe]");
 const hero = document.querySelector(".hero");
@@ -48,9 +48,9 @@ const moinsDAnimation = window.matchMedia("(prefers-reduced-motion: reduce)");
 let enAttente = false; // évite de recalculer plus d'une fois par image affichée
 
 function deplacerFond() {
-  // L'image fait 140 % de la hauteur de la section : on peut la remonter
-  // au maximum de 40 % de cette hauteur sans laisser apparaître de vide.
-  const decalageMax = hero.offsetHeight * 0.4;
+  // La photo fait 130 % de la hauteur de la section : on peut la remonter
+  // au maximum de 30 % de cette hauteur sans laisser apparaître de vide.
+  const decalageMax = hero.offsetHeight * 0.3;
   const decalage = Math.min(window.scrollY * 0.2, decalageMax);
 
   fond.style.setProperty("--translateY", `-${decalage}px`);
