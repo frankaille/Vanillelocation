@@ -164,13 +164,13 @@ svg {
   display: flex;
    justify-content:flex-end; 
   align-items: center;
-  gap: 5 rem;
- // margin-right: auto; /* pousse le bloc (liens + icônes) tout à droite */
+  gap: 15 rem;
+/* margin-right: auto; pousse le bloc (liens + icônes) tout à droite */
 }
 
 .menu__liens {
   display: flex;
-  gap: 0.1rem;
+  gap: 0.5rem;
 }
 
 .menu__liens a {
