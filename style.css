@@ -142,15 +142,16 @@ svg {
 /* ---------- En-tête ---------- */
 
 .entete {
-  position: sticky;
-  top: 0;
+ /* position: absolu;
+  top: 0;*/
   z-index: 50;
   background: var(--beige);
 }
 
 .entete__contenu {
   display: flex;
-   justify-content: right;
+   flex-direction: row;
+   justify-content: space between;
   align-items: center;
   gap: 1.5rem;
   max-width: var(--largeur-max);
