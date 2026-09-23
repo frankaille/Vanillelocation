@@ -121,7 +121,8 @@ svg {
 
 .menu__liens a,
 .reseaux a,
-.bouton {
+.bouton,
+.logo{
   transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
 }
 
@@ -130,7 +131,10 @@ svg {
 .reseaux a:hover,
 .reseaux a:focus-visible,
 .bouton:hover,
-.bouton:focus-visible {
+.bouton:focus-visible ,
+.logo:hover,
+.logo:focus-visible ,
+{
   transform: scale(0.92);
 }
 
@@ -163,7 +167,7 @@ svg {
 
 .menu {
   display: flex;
-   justify-content:flex-start; 
+   justify-content:flex-end; 
   align-items: center;
   gap: 15 rem;
 /* margin-right: auto; pousse le bloc (liens + icônes) tout à droite */
@@ -171,7 +175,7 @@ svg {
 
 .menu__liens {
   display: flex;
-  gap: 0.5rem;
+  gap: 15 rem;
 }
 
 .menu__liens a {
@@ -188,7 +192,7 @@ svg {
 .reseaux {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.25rem;
+  gap: 6 rem; //au lieu de 0.25
 }
 
 .reseaux a {
