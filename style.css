@@ -167,15 +167,15 @@ svg {
 
 .menu {
   display: flex;
-
+ justify-content: flex-end;
   align-items: center;
-  gap: 15rem;
+ /* gap: 15rem;*/
  margin-right: auto; /*pousse le bloc (liens + icônes) tout à droite */
 }
 
 .menu__liens {
   display: flex;
-  gap: 15rem;
+  /*gap: 15rem;*/
 }
 
 .menu__liens a {
