@@ -158,8 +158,8 @@ svg {
 }
 
 .logo img {
-  width: calc(var(--hauteur-entete) - 24px);
-  height: calc(var(--hauteur-entete) - 24px);
+  width: 130px;
+  height: 130px;
   object-fit: contain;
 }
 
@@ -170,7 +170,7 @@ svg {
 
   align-items: center;
   gap: 15rem;
-/* margin-right: auto; pousse le bloc (liens + icônes) tout à droite */
+ margin-right: auto; /*pousse le bloc (liens + icônes) tout à droite */
 }
 
 .menu__liens {
