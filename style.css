@@ -122,7 +122,8 @@ svg {
 .menu__liens a,
 .reseaux a,
 .bouton,
-.logo{
+.logo
+{
   transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
 }
 
