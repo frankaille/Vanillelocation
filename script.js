@@ -8,10 +8,10 @@
 /* ---------- 1. Menu burger ---------- */
 
 const boutonBurger = document.querySelector(".burger");
-const menu = document.querySelector("#menu");
+const menu__liens = document.querySelector("#menu__liens");
 
 function ouvrirMenu(ouvrir) {
-  menu.classList.toggle("est-ouvert", ouvrir);
+  menu__liens.classList.toggle("est-ouvert", ouvrir);
   boutonBurger.setAttribute("aria-expanded", String(ouvrir));
   boutonBurger.setAttribute(
     "aria-label",
