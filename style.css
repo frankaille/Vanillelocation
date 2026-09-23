@@ -153,7 +153,7 @@ svg {
    flex-direction: row;
    justify-content: space between;
   align-items: center;
-  gap: 1.5rem;
+  /*gap: 1.5rem;*/
   max-width: var(--largeur-max);
   min-height: var(--hauteur-entete);
   margin: 0 auto;
@@ -218,7 +218,8 @@ svg {
   display: none;
   flex-direction: column;
   justify-content: center;
-   align-items :space-around;
+  justify-content: space-around;
+  align-items: center;
  /* gap: 5px;*/
   width: 3.25rem;
   height: 3.25rem;
