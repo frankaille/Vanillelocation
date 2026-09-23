@@ -148,6 +148,7 @@ svg {
 
 .entete__contenu {
   display: flex;
+   justify-content: flex-end;
   align-items: center;
   gap: 1.5rem;
   max-width: var(--largeur-max);
@@ -166,7 +167,7 @@ svg {
 
 .menu {
   display: flex;
-   justify-content: flex-end;
+
   align-items: center;
   gap: 15rem;
 /* margin-right: auto; pousse le bloc (liens + icônes) tout à droite */
@@ -191,7 +192,7 @@ svg {
 .reseaux {
   display: flex;
   flex-wrap: wrap;
-  gap: 6rem; //au lieu de 0.25
+  gap: 0.25rem;
 }
 
 .reseaux a {
@@ -335,10 +336,13 @@ svg {
   display: inline-block;
   padding: 0.25rem 0;
   text-decoration: none;
+   transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
 }
 
-.pied__liens a:hover {
+.pied__liens a:hover,
+    .pied__liens a:focus-visible {
   text-decoration: underline;
+   transform : scale(0.92);
 }
 
 .pied__bloc .reseaux {
@@ -368,6 +372,7 @@ svg {
 
 .pied__bas a:hover,
    .pied_bas a:focus-visible {
+      text-decoration: underline;
    transform : scale(0.92)
 }
 
