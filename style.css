@@ -267,7 +267,7 @@ svg {
   height: 130%;
   background-image: url("hero.jpg");
   background-size: cover;
-  background-position: center;
+  background-position: bottom;
   transform: translateY(var(--translateY, 0px));
   will-change: transform;
 }
