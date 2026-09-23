@@ -385,7 +385,7 @@ svg {
 
   /* Menu déroulant, caché tant que le burger n'est pas activé.
      Il empile le lien "Accueil" puis les icônes de contact. */
-  .menu {
+  .menu__liens {
     position: absolute;
     top: 100%;
     left: 0;
