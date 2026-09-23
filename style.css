@@ -170,9 +170,9 @@ svg {
 
 .menu {
   display: flex;
- justify-content: center;
+ justify-content: flex-end;
   align-items: center;
- gap: 1rem;
+/* gap: 1rem;*/
 /* margin-right: auto; pousse le bloc (liens + icônes) tout à droite */
 }
 
@@ -217,7 +217,6 @@ svg {
 .burger {
   display: none;
   flex-direction: column;
-  justify-content: center;
   justify-content: space-around;
   align-items: center;
  /* gap: 5px;*/
