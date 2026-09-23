@@ -184,7 +184,7 @@ svg {
 .menu__liens a {
   display: block;
   padding: 0.7rem 1.1rem;
-  border-radius: 14px;
+  border-radius: var( --rayon-reseaux);
   background: var(--blanc-casse);
   color: var(--texte);
   text-decoration: none;
