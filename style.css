@@ -173,7 +173,7 @@ svg {
  justify-content: center;
   align-items: center;
  gap: 1rem;
- margin-right: auto; /*pousse le bloc (liens + icônes) tout à droite */
+/* margin-right: auto; pousse le bloc (liens + icônes) tout à droite */
 }
 
 .menu__liens {
@@ -393,10 +393,10 @@ svg {
   /* Menu déroulant, caché tant que le burger n'est pas activé.
      Il empile le lien "Accueil" puis les icônes de contact. */
   .menu__liens {
-    position: absolute;
-    top: 100%;
+    position: static;
+   /* top: 100%;
     left: 0;
-    right: 0;
+    right: 0;*/
     flex-direction: column;
     align-items: stretch;
     gap: 1rem;
@@ -411,9 +411,7 @@ svg {
     display: flex;
   }
 
-  .menu__liens {
-    flex-direction: column;
-  }
+
 }
 
 /* Respecte les personnes qui réduisent les animations dans leur système */
