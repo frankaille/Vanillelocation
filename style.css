@@ -19,7 +19,8 @@
   /* Tailles */
   --hauteur-entete: 88px;
   --largeur-max: 1280px;
-  --rayon: 5px;
+  --rayon-bouton: 14px;
+   --rayon-reseaux: 5px;
 
   /* Polices : Anton pour les titres (condensée et grasse, comme
      sur l'ancien site), police du système pour le reste */
@@ -120,7 +121,8 @@ svg {
 
 .menu__liens a,
 .reseaux a,
-.bouton {
+.bouton,
+.logo{
   transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
 }
 
@@ -129,7 +131,10 @@ svg {
 .reseaux a:hover,
 .reseaux a:focus-visible,
 .bouton:hover,
-.bouton:focus-visible {
+.bouton:focus-visible ,
+.logo:hover,
+.logo:focus-visible ,
+{
   transform: scale(0.92);
 }
 
@@ -164,19 +169,19 @@ svg {
   display: flex;
    justify-content:flex-end; 
   align-items: center;
-  gap: 5 rem;
- // margin-right: auto; /* pousse le bloc (liens + icônes) tout à droite */
+  gap: 15 rem;
+/* margin-right: auto; pousse le bloc (liens + icônes) tout à droite */
 }
 
 .menu__liens {
   display: flex;
-  gap: 0.1rem;
+  gap: 15 rem;
 }
 
 .menu__liens a {
   display: block;
   padding: 0.7rem 1.1rem;
-  border-radius: 3px;
+  border-radius: 14px;
   background: var(--blanc-casse);
   color: var(--texte);
   text-decoration: none;
@@ -187,7 +192,7 @@ svg {
 .reseaux {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.1rem;
+  gap: 6 rem; //au lieu de 0.25
 }
 
 .reseaux a {
@@ -195,7 +200,7 @@ svg {
   place-items: center;
   width: 3.25rem;
   height: 3.25rem;
-  border-radius: var(--rayon);
+  border-radius: var(--rayon-reseaux);
   color: #fff;
 }
 
@@ -315,7 +320,7 @@ svg {
   width: 100%;
   min-height: 110px;
   padding: 1rem 1.25rem;
-  border-radius: var(--rayon);
+  border-radius: var(--rayon-bouton);
   background: var(--bleu);
   color: #fff;
   text-align: center;
@@ -380,7 +385,7 @@ svg {
 
   /* Menu déroulant, caché tant que le burger n'est pas activé.
      Il empile le lien "Accueil" puis les icônes de contact. */
-  .menu {
+  .menu__liens {
     position: absolute;
     top: 100%;
     left: 0;
