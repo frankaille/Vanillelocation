@@ -148,7 +148,7 @@ svg {
 
 .entete__contenu {
   display: flex;
-   justify-content: flex-end;
+   justify-content: right;
   align-items: center;
   gap: 1.5rem;
   max-width: var(--largeur-max);
@@ -167,15 +167,15 @@ svg {
 
 .menu {
   display: flex;
- justify-content: flex-end;
+ justify-content: center;
   align-items: center;
- /* gap: 15rem;*/
+ gap: 1rem;
  margin-right: auto; /*pousse le bloc (liens + icônes) tout à droite */
 }
 
 .menu__liens {
   display: flex;
-  /*gap: 15rem;*/
+  gap: 3rem;
 }
 
 .menu__liens a {
