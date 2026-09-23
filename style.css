@@ -376,9 +376,7 @@ svg {
    ========================================================== */
 
 @media (max-width: 767px) {
-  :root {
-    --hauteur-entete: 72px;
-  }
+
 
   .burger {
     display: flex;
@@ -401,7 +399,7 @@ svg {
     display: none;
   }
 
-  .menu.est-ouvert {
+  .menu__liens.est-ouvert {
     display: flex;
   }
 
