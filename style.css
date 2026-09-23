@@ -142,8 +142,8 @@ svg {
 /* ---------- En-tête ---------- */
 
 .entete {
- /* position: absolu;
-  top: 0;*/
+ position: relative;
+  top: 0;
   z-index: 50;
   background: var(--beige);
 }
@@ -393,8 +393,9 @@ svg {
 
   /* Menu déroulant, caché tant que le burger n'est pas activé.
      Il empile le lien "Accueil" puis les icônes de contact. */
+
   .menu__liens {
-    position: static;
+    position: absolute;
    /* top: 100%;
     left: 0;
     right: 0;*/
