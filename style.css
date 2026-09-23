@@ -218,7 +218,8 @@ svg {
   display: none;
   flex-direction: column;
   justify-content: center;
-  gap: 5px;
+   align-items :space-around;
+ /* gap: 5px;*/
   width: 3.25rem;
   height: 3.25rem;
   padding: 0 0.7rem;
