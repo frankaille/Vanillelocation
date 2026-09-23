@@ -168,13 +168,13 @@ svg {
   display: flex;
    justify-content:flex-end; 
   align-items: center;
-  gap: 15 rem;
+  gap: 15rem;
 /* margin-right: auto; pousse le bloc (liens + icônes) tout à droite */
 }
 
 .menu__liens {
   display: flex;
-  gap: 15 rem;
+  gap: 15rem;
 }
 
 .menu__liens a {
@@ -191,7 +191,7 @@ svg {
 .reseaux {
   display: flex;
   flex-wrap: wrap;
-  gap: 6 rem; //au lieu de 0.25
+  gap: 6rem; //au lieu de 0.25
 }
 
 .reseaux a {
@@ -363,10 +363,12 @@ svg {
 
 .pied__bas a {
   text-decoration: none;
+   transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
 }
 
-.pied__bas a:hover {
-  text-decoration: underline;
+.pied__bas a:hover,
+   .pied_bas a:focus-visible {
+   transform : scale(0.92)
 }
 
 /* ==========================================================
