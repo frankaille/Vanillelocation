@@ -122,8 +122,7 @@ svg {
 .menu__liens a,
 .reseaux a,
 .bouton,
-.logo
-{
+.logo img {
   transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
 }
 
@@ -133,9 +132,8 @@ svg {
 .reseaux a:focus-visible,
 .bouton:hover,
 .bouton:focus-visible ,
-.logo:hover,
-.logo:focus-visible ,
-{
+.logo img:hover,
+.logo img:focus-visible {
   transform: scale(0.92);
 }
 
