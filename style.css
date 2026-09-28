@@ -1,0 +1,507 @@
+/* ==========================================================
+   Vanillelocation - feuille de style
+   ----------------------------------------------------------
+   Toutes les couleurs et tailles importantes sont regroupées
+   ci-dessous. Pour changer une couleur du site, il suffit de
+   la modifier ici : elle se met à jour partout.
+   ========================================================== */
+
+:root {
+  /* Couleurs */
+  --beige: #f2e7df; /* fond général (en-tête, pied de page) */
+  --blanc-casse: #f8f3ef; /* fond du bouton "Accueil" */
+  --texte: #22201d; /* texte sombre sur fond clair */
+  --bleu: #6ec1e4; /* boutons du pied de page + icône téléphone */
+  --vert: #25d366; /* icône WhatsApp */
+  --rouge: #ea4335; /* icône e-mail */
+  --orange: #ffae48; /* icône carte */
+
+  /* Tailles */
+  --hauteur-entete: 100px;
+  --largeur-max: 1700px;
+  --rayon-bouton: 14px;
+  --rayon-reseaux: 5px;
+
+  /* Polices : Anton pour les titres (condensée et grasse, comme
+     sur l'ancien site), police du système pour le reste */
+  --police:
+    system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+    sans-serif;
+  --police-titre: "Anton", var(--police);
+}
+
+/* ---------- Base ---------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--police);
+  line-height: 1.5;
+  color: var(--texte);
+  background: var(--beige);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  color: inherit;
+}
+
+/* Focus visible au clavier (accessibilité) */
+:focus-visible {
+  outline: 3px solid var(--bleu);
+  outline-offset: 3px;
+}
+
+/* Texte lu par les lecteurs d'écran mais invisible à l'écran */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Le sprite d'icônes ne doit rien afficher à l'écran */
+.sprite {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+/* Lien "Aller au contenu" : apparaît seulement quand on navigue au clavier */
+.lien-evitement {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  z-index: 100;
+  padding: 0.6rem 1rem;
+  background: var(--bleu);
+  color: #fff;
+  border-radius: var(--rayon);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.lien-evitement:focus {
+  top: 1rem;
+}
+
+svg {
+  width: 1.4rem;
+  height: 1.4rem;
+  fill: currentColor;
+}
+
+/* ---------- Effet "dézoom" au survol ----------
+   Un seul endroit à modifier pour ajuster l'effet sur
+   tous les boutons et icônes du site. */
+
+.menu__liens a,
+.reseaux a,
+.pied__reseaux a,
+.bouton,
+.logo img {
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.menu__liens a:hover,
+.menu__liens a:focus-visible,
+.reseaux a:hover,
+.reseaux a:focus-visible,
+.pied__reseaux a:hover,
+.pied__reseaux a:focus-visible,
+.bouton:hover,
+.bouton:focus-visible,
+.logo img:hover,
+.logo img:focus-visible {
+  transform: scale(0.92);
+}
+
+/* ---------- En-tête ---------- */
+
+.entete {
+  position: relative;
+  z-index: 50;
+  background: var(--beige);
+}
+
+.entete__contenu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  max-width: var(--largeur-max);
+  min-height: var(--hauteur-entete);
+  margin: 0 auto;
+  padding: 0.75rem 1.25rem;
+}
+
+.logo img {
+  max-width: 130px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Menu principal : "Accueil" sous forme de petit encadré discret */
+
+.menu {
+  display: flex;
+  min-width: 0;
+  width: 50%;
+  justify-content: center;
+  align-items: center;
+  margin-right: 1.4rem;
+}
+
+.menu__liens {
+  display: flex;
+
+  width: 100%;
+  justify-content: space-evenly;
+  gap: 0.5rem;
+}
+
+.menu__liens a {
+  display: block;
+  padding: 0.7rem 1.1rem;
+  border-radius: var(--rayon-reseaux);
+  background: var(--blanc-casse);
+  color: var(--texte);
+  text-decoration: none;
+}
+
+/* Icônes de contact (en-tête et pied de page) : carrés arrondis colorés */
+
+.reseaux,
+.pied__reseaux {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 0.25rem;
+  min-width: 108px;
+}
+
+.reseaux a,
+.pied__reseaux a {
+  display: grid;
+  place-items: center;
+  width: 3.25rem;
+  height: 3.25rem;
+  border-radius: var(--rayon-reseaux);
+  color: #fff;
+}
+
+.reseaux__whatsapp {
+  background: var(--vert);
+}
+.reseaux__mail {
+  background: var(--rouge);
+}
+.reseaux__tel {
+  background: var(--bleu);
+}
+.reseaux__carte {
+  background: var(--orange);
+}
+
+/* Bouton burger : caché sur ordinateur */
+
+.burger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  gap: 5px;
+  width: 3.25rem;
+  height: 3.25rem;
+  padding: 0 0.7rem;
+  border: 0;
+  border-radius: var(--rayon);
+  background: var(--blanc-casse);
+  cursor: pointer;
+  min-width: 3.25rem;
+}
+
+.burger__barre {
+  display: block;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--texte);
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease;
+}
+
+/* Le burger se transforme en croix quand le menu est ouvert */
+.burger[aria-expanded="true"] .burger__barre:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.burger[aria-expanded="true"] .burger__barre:nth-child(2) {
+  opacity: 0;
+}
+
+.burger[aria-expanded="true"] .burger__barre:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ---------- Section d'accueil (hero) ---------- */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  min-height: 40vh;
+}
+
+/* Couche d'image, plus haute que la section (130 %) pour avoir de la marge
+   de déplacement : c'est ce qui permet l'effet de parallaxe au défilement. */
+.hero__fond {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 130%;
+  background-image: url("hero.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 75%;
+
+  will-change: transform;
+  transform: translateY(var(--translateY, 0px));
+}
+
+/* ---------- Pied de page ---------- */
+
+.pied {
+  background: var(--beige);
+  max-width: var(--largeur-max);
+  margin: 0 auto;
+  padding: 0;
+}
+
+.pied__haut {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: start;
+  gap: 2.5rem;
+  max-width: var(--largeur-max);
+  margin: 0 auto;
+  padding: 3rem 1.25rem 2rem;
+  text-align: center;
+}
+.pied__milieu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: start;
+  gap: 2.5rem;
+  max-width: var(--largeur-max);
+
+  text-align: center;
+}
+
+.pied__bloc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 200px;
+}
+
+.logo--pied {
+  display: flex;
+  align-self: center;
+  width: 130px;
+  height: 130px;
+}
+
+.pied__titre {
+  margin: 0 0 1rem;
+  font-family: var(--police-titre);
+  font-size: 1.3rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--texte);
+}
+
+/* Boutons du pied de page : icône au-dessus du texte */
+
+.bouton {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  width: 100%;
+  min-height: 110px;
+  padding: 1rem 1.25rem;
+  border-radius: var(--rayon-bouton);
+  background: var(--bleu);
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 600;
+}
+.svg_hover {
+  position: relative;
+  display: grid;
+}
+.svg_hover svg {
+  grid-area: 1 / 1; /* superpose les deux icônes exactement au même endroit */
+  transition: opacity 0.2s ease;
+}
+.svg-survol {
+  opacity: 0;
+}
+.bouton:hover .svg-principale {
+  opacity: 0;
+}
+
+.bouton:hover .svg-survol {
+  opacity: 1;
+}
+.bouton:hover {
+  background: #54595f;
+}
+
+.pied__liens {
+  margin-bottom: 1rem;
+}
+
+.pied__liens a {
+  display: inline-block;
+  padding: 0.25rem 0;
+  text-decoration: none;
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.pied__liens a:hover,
+.pied__liens a:focus-visible {
+  text-decoration: underline;
+  transform: scale(0.92);
+}
+
+.pied__reseaux {
+  flex-wrap: wrap;
+  max-width: 108px;
+}
+
+/* Mentions légales */
+
+.pied__bas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem 2rem;
+  padding: 1.25rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  font-size: 0.9rem;
+}
+
+.pied__bas p {
+  margin: 0;
+}
+
+.pied__bas a {
+  text-decoration: none;
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.pied__bas a:hover,
+.pied_bas a:focus-visible {
+  text-decoration: underline;
+  transform: scale(0.92);
+}
+
+@media (max-width: 1200px) {
+  .pied__haut {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* ==========================================================
+   Mobile : le menu passe derrière le bouton burger
+   ========================================================== */
+
+@media (max-width: 767px) {
+  .pied__haut__blocs {
+    flex-direction: column;
+  }
+  .burger {
+    display: flex;
+  }
+
+  .reseaux {
+    flex-wrap: wrap;
+    max-width: 108px;
+  }
+
+  /* Menu déroulant, caché tant que le burger n'est pas activé.
+     Il empile le lien "Accueil" puis les icônes de contact. */
+
+  .menu__liens {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+    margin: 0;
+    padding: 1rem 1.25rem 1.25rem;
+    background: var(--beige);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+    display: none;
+  }
+
+  .menu__liens.est-ouvert {
+    display: flex;
+  }
+}
+
+/* Respecte les personnes qui réduisent les animations dans leur système */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  * {
+    transition: none !important;
+  }
+}
