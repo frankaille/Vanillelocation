@@ -297,7 +297,21 @@ svg {
   will-change: transform;
   transform: translateY(var(--translateY, 0px));
 }
-
+.soustitre {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 1rem 1.25rem;
+  font-family: var(--police-titre);
+  font-size: 2.3rem;
+  letter-spacing: 0.02em;
+  color: var(--texte);
+  text-align: center;
+  text-decoration: none;
+  font-weight: 100;
+}
 /* ---------- Pied de page ---------- */
 
 .pied {
