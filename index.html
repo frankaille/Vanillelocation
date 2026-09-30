@@ -174,7 +174,7 @@
           </button>
           <ul class="menu__liens" id="menu__liens" aria-label="Menu principal">
             <li><a href="./" aria-current="page">Accueil</a></li>
-            <li><a href="/tarifs.html">Tarifs</a></li>
+            <!-- <li><a href="/tarifs.html">Tarifs</a></li> -->
           </ul>
         </nav>
         <ul class="reseaux">
@@ -253,8 +253,15 @@
               href="https://maps.app.goo.gl/W7Ekw9DHVgbHR7QS7"
               target="_blank"
               rel="noopener"
-            >
-              <svg aria-hidden="true"><use href="#icone-carte" /></svg>
+              ><div class="svg_hover">
+                <svg class="svg-principale" aria-hidden="true">
+                  <use href="#icone-carte-pliee" />
+                </svg>
+                <svg class="svg-survol" aria-hidden="true">
+                  <use href="#icone-carte" />
+                </svg>
+              </div>
+
               <span>509 Route du Golf 97680 Combani</span>
             </a>
           </div>
@@ -298,7 +305,7 @@
           <nav aria-label="Navigation du pied de page">
             <ul class="pied__liens">
               <li><a href="./" aria-current="page">Accueil</a></li>
-              <li><a href="./tarifs.html">Tarifs</a></li>
+              <!-- <li><a href="./tarifs.html">Tarifs</a></li> -->
             </ul>
           </nav>
           <ul class="pied__reseaux">
@@ -335,7 +342,7 @@
                 target="_blank"
                 rel="noopener"
                 aria-label="Voir sur la carte"
-                ><svg aria-hidden="true"><use href="#icone-carte-pliee" /></svg
+                ><svg aria-hidden="true"><use href="#icone-carte" /></svg
               ></a>
             </li>
           </ul>
