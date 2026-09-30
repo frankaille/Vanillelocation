@@ -300,12 +300,14 @@ svg {
 .soustitre {
   display: flex;
   flex-direction: row;
+
+  flex-wrap: nowrap;
   align-items: center;
   justify-content: center;
-  gap: 0.6rem;
-  padding: 1rem 1.25rem;
+  /* gap: 0.6rem; */
+  /* padding: 1rem 1.25rem; */
   font-family: var(--police-titre);
-  font-size: 2.3rem;
+  font-size: 1.5rem;
   letter-spacing: 0.02em;
   color: var(--texte);
   text-align: center;
